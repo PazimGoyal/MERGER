@@ -37,7 +37,7 @@ def file_merge():
             list_row=[]
             data_row=df_accounting.loc[start]
             Truck_no= data_row.iat[data_acc['TRUCK']]
-            if data_row.iat[data_acc['END']]=='On Account of :' or data_row.iat[data_acc['END']]=='To':
+            if data_row.iat[data_acc['END']]=='On Account of :' or data_row.iat[data_acc['END']]=='Ta':
                 break
             if data_row.empty:
                 empty_count+=1
@@ -68,7 +68,7 @@ def file_merge():
             list_row.append(data_truck_row[data_truck['MOB.NO']].values[0])
             list_all_rows.append(list_row)
         except Exception as e:
-            print(e)
+            pass
         start+=1
 
     final=[""]*14
