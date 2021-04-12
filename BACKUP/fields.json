@@ -1,0 +1,35 @@
+{
+  "truck": {
+    "TRUCK": "TRUCK NO",
+    "AC.NO": "BANK ACCOUNT NO",
+    "IFSC": "IFSC CODE",
+    "BANK": "BANK NAME",
+    "NAME": "OWNER NAME",
+    "MOB.NO": "MOBILE NO"
+  },
+  "account": {
+    "COMMENT": "FOR EG IF YOU WANT TO PUT B5 we wite [1,4] as A=0, b=1, c=2 etc   A2 = [0,1] ,  D9 = [3,8]",
+    "VCH.NO": [1,4],
+    "VCH.DATE": [3,4],
+    "CHALLAN": 2,
+    "DATE": 3,
+    "TRUCK": 9,
+    "AMOUNT": 4,
+    "DEST": 7,
+    "QTY": 8,
+    "TOTAL": [3,7],
+    "END":0,
+    "START":8,
+    "REF": [1,5]
+
+
+  },
+  "files":{
+    "trucking_file":"BACKUP/TRUCK UNION BANK DETAIL.xlsx",
+    "accounting_file":"BACKUP/Accounting Voucher.xlsx",
+    "calculation_file":"FRT.CAL.xlsx",
+    "sheet_name":"BANK",
+    "COLUMNS":["VCH.NO","REF.NO","VCH.DATE", 	"CHALLAN" ,"DATE",	"TRUCK",	 "NAME",	"AC.NO",	"IFSC",	"BANK",	"AMOUNT",	"DEST",	"QTY",	"MOB.NO"]
+    
+  }
+}
