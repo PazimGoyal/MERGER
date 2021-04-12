@@ -31,12 +31,13 @@ def file_merge():
     data_truck = data['truck']
     start = data_acc['START']
     empty_count=0
-    while True:
+    max_size=df_accounting.shape[0]
+    while start<=max_size:
         try:
             list_row=[]
             data_row=df_accounting.loc[start]
             Truck_no= data_row.iat[data_acc['TRUCK']]
-            if data_row.iat[data_acc['END']]=='On Account of :':
+            if data_row.iat[data_acc['END']]=='On Account of :' or data_row.iat[data_acc['END']]=='To':
                 break
             if data_row.empty:
                 empty_count+=1
