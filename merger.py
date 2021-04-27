@@ -57,7 +57,7 @@ def append_df_to_excel(filename, df, sheet_name='Sheet1', startrow=None,
     writer.sheets = {ws.title: ws for ws in writer.book.worksheets}
     if set_width:
         size_dict={1:15,3:15,4:30,5:15,6:15,7:40,8:17,9:17,10:30,12:30}
-        ws=writer.sheets["Sheet1"]
+        ws=writer.sheets[sheet_name]
         dim_holder = DimensionHolder(worksheet=ws)
         for i,j in size_dict.items():
             dim_holder[get_column_letter(i)] = ColumnDimension(ws, min=i, max=i, width=j)
@@ -164,27 +164,14 @@ def file_merge():
     append_df_to_excel(data['files']['calculation_file'],new_df,set_width=True, header=None, index=False)
 
 
-    # df_row = pd.concat([df_calculation, new_df])
-    # writer = pd.ExcelWriter(data['files']['calculation_file'], engine='xlsxwriter')
-    # df_row.to_excel(writer, sheet_name='Sheet1',index=False)
-
-    # worksheet = writer.sheets['Sheet1']
-    #
-    # worksheet.set_column('A:N', 15)
-    # worksheet.set_column('D:D', 30)
-    # worksheet.set_column('G:G', 40)
-    # worksheet.set_column('J:J', 30)
-    # worksheet.set_column('L:L', 30)
-    # writer.save()
-
     # writer = pd.ExcelWriter('final.xlsx')
-    #
-    # for i,j in firms.items():
-    #     if j:
-    #         new_df = pd.DataFrame(j, columns=columns).astype(str)
-    #         new_df.to_excel(writer, sheet_name=i)
-    #
-    # writer.save()
+
+    for i,j in firms.items():
+        if j:
+            j.append(empt)
+            j.append(empt)
+            new_df = pd.DataFrame(j, columns=columns).astype(str)
+            append_df_to_excel('FirmsSorted.xlsx',new_df, set_width=True,header=None, index=False,sheet_name=i)
 
 
 date_stored='BACKUP/last.txt'
@@ -198,16 +185,4 @@ if last_modified==stored:
         file_merge()
 else:
     file_merge()
-
-"""
-append_df_to_excel('d:/temp/test.xlsx', df)
-
-append_df_to_excel('d:/temp/test.xlsx', df, header=None, index=False)
-
-append_df_to_excel('d:/temp/test.xlsx', df, sheet_name='Sheet2',
-                        index=False)
-
-append_df_to_excel('d:/temp/test.xlsx', df, sheet_name='Sheet2',
-                        index=False, startrow=25)
-"""
 
