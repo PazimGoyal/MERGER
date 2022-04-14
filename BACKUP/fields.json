@@ -16,6 +16,7 @@
     "TRUCK": 9,
     "AMOUNT": 4,
     "DEST": 7,
+    "GNO": 10,
     "QTY": 8,
     "TOTAL": [3,7],
     "END":0,
@@ -29,7 +30,6 @@
     "accounting_file":"BACKUP/Accounting Voucher.xlsx",
     "calculation_file":"FRT.CAL.xlsx",
     "sheet_name":"BANK",
-    "COLUMNS":["VCH.NO","REF.NO","VCH.DATE", 	"CHALLAN" ,"DATE",	"TRUCK",	 "NAME",	"AC.NO",	"IFSC",	"BANK",	"AMOUNT",	"DEST",	"QTY",	"MOB.NO"]
-    
+    "COLUMNS":["VCH.NO","REF.NO","VCH.DATE", 	"CHALLAN" ,"DATE",	"TRUCK",	 "NAME",	"AC.NO",	"IFSC",	"BANK",	"AMOUNT",	"DEST",	"QTY",	"MOB.NO","G NO","Credit"]
   }
 }
